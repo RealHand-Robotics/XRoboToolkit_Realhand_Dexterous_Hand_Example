@@ -18,7 +18,7 @@ Before you start, please make sure you have installed the pybind11 and c++ in yo
 ## 🚀 Get Started
 
 
-Follow these steps to build and run a full XR-to-robot teleoperation sample on a **[PICO 4 Ultra headset](https://www.picoxr.com/global/products/pico4-ultra)) and a Linux x86 PC**. This sample has been tested only under the below system OS requirements:
+Follow these steps to build and run a full XR-to-robot teleoperation sample on a **[PICO 4 Ultra headset](https://www.picoxr.com/global/products/pico4-ultra) and a Linux x86 PC**. This sample has been tested only under the below system OS requirements:
 Linux x86 PC: Ubuntu 22.04/ Ubuntu 24.04
 PICO 4 Ultra: User OS >5.12. Special permission with enterprise version and VST camera permission is required for headset camera access.
 1. **Install XRoboToolkit-PC-Service**  
