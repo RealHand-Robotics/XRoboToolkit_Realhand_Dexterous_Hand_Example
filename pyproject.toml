@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xrobotoolkit_teleop"
+version = "1.0.3"
+description = "RealHand L6 dexterous-hand teleoperation example for XRoboToolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Zhigen", email = "zhaozhigen@gmail.com"}
+]
+# NOTE: `dex_retargeting` and `realhand` are installed outside this list
+# because they ship from non-PyPI sources:
+#   - dex_retargeting -> ./dependencies/dex_retargeting_local  (vendored, with
+#                        additional RealHand robot entries)
+#   - realhand        -> git+https://github.com/RealHand-Robotics/realbot-python-sdk.git
+# Both are installed automatically by `setup.sh` / `setup_conda.sh`.
+dependencies = [
+    "mujoco",
+    "numpy",
+    "meshcat",
+    "placo",
+    "ur_rtde",
+    "dynamixel-sdk",
+    "rospkg",
+    "torch",
+    "python-can",
+    "pyrealsense2",
+    "opencv-python",
+    "tyro",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+]
+
+[tool.setuptools]
+packages = ["xrobotoolkit_teleop"]
+
+[tool.setuptools.package-data]
+xrobotoolkit_teleop = ["../assets/**/*"]
+
+[tool.black]
+line-length = 120

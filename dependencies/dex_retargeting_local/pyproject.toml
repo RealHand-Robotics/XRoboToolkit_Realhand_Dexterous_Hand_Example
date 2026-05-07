@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dex_retargeting"
+version = "0.5.1+realhand"
+description = "Vendored dex_retargeting with RealHand robot entries for XRoboToolkit RealHand example."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy",
+    "pyyaml",
+    "lxml",
+    "nlopt",
+    "pin",
+    "trimesh",
+    "anytree",
+    "six",
+    "pytransform3d",
+    "torch",
+]
+
+[tool.setuptools]
+packages = ["dex_retargeting", "dex_retargeting.configs"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"dex_retargeting" = ["configs/**/*.yml"]
