@@ -11,7 +11,41 @@ tracking input. Hand tracking is retargeted to the L6 joint space with
 [`dex_retargeting`](https://github.com/dexsuite/dex-retargeting); commands are
 sent to the hardware through the new
 [`realhand`](https://github.com/RealHand-Robotics/realbot-python-sdk) Python SDK
-(CAN-bus based).
+(CAN-bus based). 
+
+Before you start, please make sure you have installed the pybind11 and c++ in your environment.
+
+## 🚀 Get Started
+
+
+Follow these steps to build and run a full XR-to-robot teleoperation sample on a **[PICO 4 Ultra headset](https://www.staples.com/pico-4-ultra-enterprise-virtual-reality-headset-qualcomm-snapdragon-mixed-reality-white-p9001sw40679h/product_24626400) and a Linux x86 PC**. This sample has been tested only under the below system OS requirements:
+Linux x86 PC: Ubuntu 22.04/ Ubuntu 24.04
+PICO 4 Ultra: User OS >5.12. Special permission with enterprise version and VST camera permission is required for headset camera access.
+1. **Install XRoboToolkit-PC-Service**  
+   - Download [deb package for ubuntu 22.04](https://github.com/XR-Robotics/XRoboToolkit-PC-Service/releases/download/v1.0.0/XRoboToolkit_PC_Service_1.0.0_ubuntu_22.04_amd64.deb), or build from the [repo source](https://github.com/XR-Robotics/XRoboToolkit-PC-Service).
+   - The XRoboToolkit-PC-Service has been tested on ubuntu 24.04. Download [deb package for ubuntu 24.04](https://github.com/XR-Robotics/XRoboToolkit-PC-Service/releases/download/v1.0.0/XRoboToolkit_PC_Service_1.0.0_ubuntu_24.04_amd64.deb)
+   - To install, use command
+     ```bash
+      sudo dpkg -i XRoboToolkit-PC-Service_1.0.0_ubuntu_22.04_amd64.deb
+      ```
+     or
+     ```bash
+      sudo dpkg -i XRoboToolkit-PC-Service_1.0.0_ubuntu_24.04_amd64.deb
+      ```
+3. **Clone & Set Up Python Teleop Sample**  
+   - [XRoboToolkit-Teleop-Sample-Python](https://github.com/XR-Robotics/XRoboToolkit-Teleop-Sample-Python)
+4. **Install the XR App on Headset**
+   - Turn on developer mode on Pico 4 Ultra headset first ([Enable developer mode on Pico 4 Ultra](https://developer.picoxr.com/ja/document/unreal/test-and-build/)), and make sure that [adb](https://developer.android.com/tools/adb) is installed properly.
+   - Download [XRoboToolkit-PICO-1.1.1.apk](https://github.com/XR-Robotics/XRoboToolkit-Unity-Client/releases/download/v1.1.1/XRoboToolkit-PICO-1.1.1.apk) on a PC with adb installed. <sup>[[Other Versions](https://github.com/XR-Robotics/XRoboToolkit-Unity-Client/releases)]</sup>
+   - To install apk on the headset, use command
+     ```bash
+      adb install -g XRoboToolkit-PICO-1.1.1.apk
+      ```
+5. **Run Sample in Simulated Environment or on Real Robot**
+   - Connect robot PC and PICO 4 Ultra under the same network
+   - On robot PC, double click app icon of `XRoboToolkit-PC-Service` or run service `/opt/apps/roboticsservice/runService.sh`
+   - Open app `XRoboToolkit` on the PICO headset. Details of the Unity app can be found in the [Unity source repo](https://github.com/XR-Robotics/XRoboToolkit-Unity-Client).
+   - Follow instructions on [XRoboToolkit_Realhand_Dexterous_Hand_Example](https://github.com/RealHand-Robotics/XRoboToolkit_Realhand_Dexterous_Hand_Example) to run test in simulated environment or on real robot.
 
 ## Installation
 1. Download and install [XRoboToolkit PC Service](https://github.com/XR-Robotics/XRoboToolkit-PC-Service). Run the installed program before running the following demo.
