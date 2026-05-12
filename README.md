@@ -60,7 +60,7 @@ PICO 4 Ultra: User OS >5.12. Special permission with enterprise version and VST 
     **Note:** The setup scripts are currently tested on Ubuntu 22.04 / 24.04.
     It is recommended to set up a Conda environment and install using the included script.
     ```bash
-    bash setup_conda.sh --conda <optional_env_name>
+    conda create -n <optional_env_name> python==3.11
     conda activate <env_name>
     bash setup_conda.sh --install
     ```
